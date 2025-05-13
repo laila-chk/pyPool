@@ -1,8 +1,8 @@
 import sys
 
+
 def ft_filter(function, iterable):
     return [elm for elm in iterable if function(elm)]
-
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
         filterstring takes a string (S), and an integer (N) and outputs
         a list of words from S that have a length greater than N.
     """
-    if len(sys.argv) != 3 :
+    if len(sys.argv) != 3:
         print("AssertionError: the arguments are bad")
         return
     try:
