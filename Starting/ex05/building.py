@@ -22,10 +22,9 @@ def counter(text: str):
     print(spc, "spaces")
     print(dig, "digits")
 
+
 def main():
-
-
-    """ the main function that takes input from the user and calls 
+    """ the main function that takes input from the user and calls
         counter to do the counting"""
     if len(sys.argv) < 2:
         print("what is the text to count?")
