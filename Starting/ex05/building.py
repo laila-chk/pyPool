@@ -1,5 +1,7 @@
-import sys 
-def counter(text : str):
+import sys
+
+
+def counter(text: str):
     """function to count characters of each type and print their amount """
     upper, lower, ponct, spc, dig = 0, 0, 0, 0, 0
     for c in text:
@@ -21,7 +23,10 @@ def counter(text : str):
     print(dig, "digits")
 
 def main():
-    """ the main function that takes input from the user and calls counter to do the counting"""
+
+
+    """ the main function that takes input from the user and calls 
+        counter to do the counting"""
     if len(sys.argv) < 2:
         print("what is the text to count?")
         text = sys.stdin.read()
@@ -35,4 +40,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
