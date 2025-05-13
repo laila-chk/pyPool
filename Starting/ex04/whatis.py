@@ -3,11 +3,13 @@ import sys
 try:
     if len(sys.argv) < 2:
         exit()
-    assert len(sys.argv) == 2, "AssertionError: more than one argument is provided"
+    assert len(sys.argv) == 2, (
+            "AssertionError: more than one argument is provided"
+    )
     if len(sys.argv) == 2:
         try:
             n = int(sys.argv[1])
-            if n % 2 == 0 :
+            if n % 2 == 0:
                 print("I'm Even.")
             else:
                 print("I'm Odd.")
