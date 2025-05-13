@@ -19,7 +19,7 @@ def main():
         print("AssertionError: the arguments are bad")
         exit()
     words = sys.argv[1].split(' ')
-    ret = ft_filter(lambda word: len(word) >= num, words)
+    ret = ft_filter(lambda word: len(word) > num, words)
     print(ret)
 
 
