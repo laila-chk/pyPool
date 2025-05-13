@@ -26,17 +26,19 @@ def counter(text: str):
 def main():
     """ the main function that takes input from the user and calls
         counter to do the counting"""
-    if len(sys.argv) < 2:
-        print("what is the text to count?")
-        text = sys.stdin.read()
-
-    elif len(sys.argv) > 2:
-        print("AssertionError: more than one argument is provided")
+    try:
+        assert len(sys.argv) <= 2, (
+                "AssertionError: more than one argument is provided"
+                )
+        if len(sys.argv) < 2:
+            print("what is the text to count?")
+            text = sys.stdin.read()
+        else:
+            text = sys.argv[1]
+        counter(text)
+    except AssertionError as e:
+        print(e)
         exit()
-    else:
-        text = sys.argv[1]
-    counter(text)
-
 
 if __name__ == "__main__":
     main()
