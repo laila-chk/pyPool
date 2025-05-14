@@ -16,9 +16,9 @@ def counter(text: str):
         elif c in "!\"#$%&'()*+,-./:;<=>?@[]]\\^_`{|}~":
             ponct += 1
     print("The text contains", len(text), " characters:")
-    print(upper, " upper letters")
-    print(lower, " lower letters")
-    print(ponct, " punctuation marks")
+    print(upper, "upper letters")
+    print(lower, "lower letters")
+    print(ponct, "punctuation marks")
     print(spc, "spaces")
     print(dig, "digits")
 
@@ -38,6 +38,9 @@ def main():
         counter(text)
     except AssertionError as e:
         print(e)
+        exit()
+    except KeyboardInterrupt:
+        print("\nExecution interrupted by user.")
         exit()
 
 
