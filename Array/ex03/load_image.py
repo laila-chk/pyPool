@@ -1,0 +1,34 @@
+from PIL import Image, ImageDraw, ImageFont
+import numpy as np
+from numpy._typing import NDArray
+
+def ft_load(path: str, crop: bool) -> NDArray:
+    try:
+        img = Image.open(path)
+    except Exception :
+        exit("Error while trying to read the image! make sure the path is correct.")
+    if crop is True:
+        box = (400, 100, 800, 500)
+        img = img.crop(box)
+        img = img.convert("L")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.load_default()
+        width, height = img.size
+
+        draw.rectangle([(0, 0), (399, 399)], outline="black")
+
+        for x in range(0, width, 50):
+            draw.line([(x, height - 10), (x, height)], fill="black")  # x-axis tick
+            draw.text((x + 2, height - 15), str(x), fill="black", font=font)
+
+        for y in range(0, height, 50):
+            draw.line([(0, y), (10, y)], fill="black")  # y-axis tick
+            draw.text((12, y - 5), str(y), fill="black", font=font)
+        img.show()
+    data = np.asarray(img)
+    if len(img.mode) == 1:
+        print(f" ({img.size[1]}, {img.size[0]}, {len(img.mode)}) or: ({img.size[1]}, {img.size[0]})")
+    else:
+       print(f" ({img.size[1]}, {img.size[0]}, {len(img.mode)})")
+    return data
+
