@@ -1,8 +1,9 @@
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
-from numpy._typing import NDArray
 
-def ft_load(path: str, crop: bool) -> NDArray:
+def ft_load(path: str, crop: bool) :
+    """if crop is true, the function crops the image, grayscales it, adds a XY axis and write pixels vals
+    then renders the new image, and print to the standar output the size, the mode and the pixels of the image"""
     try:
         img = Image.open(path)
     except Exception :
@@ -27,8 +28,8 @@ def ft_load(path: str, crop: bool) -> NDArray:
         img.show()
     data = np.asarray(img)
     if len(img.mode) == 1:
-        print(f" ({img.size[1]}, {img.size[0]}, {len(img.mode)}) or: ({img.size[1]}, {img.size[0]})")
+        print(f"New shape after slicing:({img.size[1]}, {img.size[0]}, {len(img.mode)}) or: ({img.size[1]}, {img.size[0]})")
     else:
-       print(f" ({img.size[1]}, {img.size[0]}, {len(img.mode)})")
-    return data
+        print(f"The shape of image is:({img.size[1]}, {img.size[0]}, {len(img.mode)})")
+    print(data) 
 

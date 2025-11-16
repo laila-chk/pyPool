@@ -1,10 +1,17 @@
 from load_image import ft_load
 
 def zoom():
-    print(f"The shape of image is:", end="")
-    print(ft_load("animal.jpeg", False))
-    print(f"New shape after slicing:", end="")
-    print(ft_load("animal.jpeg", True))
+    """
+    this function loads an image, prints its format, and its pixels
+    content in RGB format.
+    then it crops the image to 400x400 px, grayscales it, prints again the new values
+    then renders the new image.
+    """
+    try:
+        ft_load("animal.jpeg", False)
+        ft_load("animal.jpeg", True)
+    except Exception :
+        exit()
 
 def main():
     zoom()

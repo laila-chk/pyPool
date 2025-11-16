@@ -3,6 +3,8 @@ import numpy as np
 from numpy._typing import NDArray
 
 def ft_load(path: str) -> NDArray:
+    """this function loads an image, prints its format, and its pixels
+    content and RGB format. """
     try:
         img = Image.open(path)
     except Exception :
