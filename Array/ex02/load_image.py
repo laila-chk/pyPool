@@ -12,6 +12,6 @@ def ft_load(path: str) -> NDArray:
         exit("Error reading the image! make sure the path is correct.")
     data = np.asarray(img)
     print(f"The shape of image is: ({img.size[1]}, "
-        f"{img.size[0]}, {len(img.mode)})")
+          f"{img.size[0]}, {len(img.mode)})")
     print(f"{data}")
     return data
