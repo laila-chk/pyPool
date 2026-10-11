@@ -8,7 +8,7 @@ from load_csv import load
 if __name__ == "__main__":
     data = load("life_expectancy_years.csv");
     countries = ['Morocco', 'France']
-    countries_data = data[data['country'].isin(countries)].set_index('country').T
+    countries_data = data[data['country'].isin(countries)].set_index('country').T.loc[:'2050']
     countries_data.plot( title="Morocco Life expectancy projection")
     plt.ylabel("Life expectancy")
     plt.xlabel("Year")
