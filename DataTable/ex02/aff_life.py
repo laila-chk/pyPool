@@ -3,8 +3,7 @@ import matplotlib.ticker as ticker
 from load_csv import load
 
 """
- this program loads the file life_expectancy_years.csv,
- and displays the information of Morocco's life expectancy vs France.
+ this program loads the file population.csv, and use it to compare population of 2 countries
 """
 if __name__ == "__main__":
     data = load("population.csv");
